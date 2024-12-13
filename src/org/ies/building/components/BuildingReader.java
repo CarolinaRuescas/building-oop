@@ -13,26 +13,36 @@ public class BuildingReader {
         this.scanner = scanner;
         this.appartmentReader = appartmentReader;
     }
+
     public Building read(){
         System.out.println("INTRODUCE LOS DATOS SOBRE EL EDIFICIO");
         System.out.println("Introduce la dirección: ");
         String address = scanner.nextLine();
 
         System.out.println(" Introduce el municipio: ");
-        String town = scanner.nextLine();
+        String city = scanner.nextLine();
 
-        System.out.println("¿Cuántos apartamentos hay?");
-        int size = scanner.nextInt();
-        scanner.nextLine();
-
-        Appartment[] appartments = new Appartment[size];
+        int numAppartments = readNumAppartments();
+        Appartment[] appartments = new Appartment[numAppartments];
         for (int i = 0; i < appartments.length; i++) {
             appartments[i] = appartmentReader.read();
         }
         return new Building(
                 address,
-                town,
+                city,
                 appartments
         );
+    }
+
+    // para que no metan un numero negativo (seria un plus hacerlo así)
+    private int readNumAppartments(){
+        int size;
+        do{
+            System.out.println("Cuantos propietarios hay?");
+            size = scanner.nextInt();
+            scanner.nextLine();
+
+        }while (size < 0);
+        return size;
     }
 }

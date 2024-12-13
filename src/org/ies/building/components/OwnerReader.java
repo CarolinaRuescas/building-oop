@@ -11,7 +11,7 @@ public class OwnerReader {
         this.scanner = scanner;
     }
     public Owner read(){
-        System.out.println("INTRODUCE LOS DATOS DLE PROPIETARIO");
+        System.out.println("INTRODUCE LOS DATOS DEL PROPIETARIO");
         System.out.println("NIF: ");
         String nif = scanner.nextLine();
 
