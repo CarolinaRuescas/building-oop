@@ -11,6 +11,17 @@ Campos:
 - Municipio
 - Apartamentos
 
+Métodos:
+- showInfo()
+- findApartment(int floor, String door): Dado una planta y una puerta,
+  devuelve el apartamento en esa planta y puerta. Si no existe dicho apartamento
+  devuelve null.
+- showFloorApartments(int floor): Dado un número de planta, muestra los
+  apartamentos de esa planta
+- findOwners(int floor, String door): Dado una planta y una puerta, devuelve
+  los propietarios del apartamento de esa puerta y planta. Si no existe dicho
+  apartamento devuelve null.
+
 ### Apartamento
 
 Campos:
@@ -18,12 +29,18 @@ Campos:
 - Puerta
 - Propietarios
 
+Métodos:
+- showInfo()
+
 ### Propietario
 
 Campos:
 - NIF
 - Nombre
 - Apellidos
+
+Métodos:
+- showInfo()
 
 ## Componentes
 

@@ -14,6 +14,51 @@ public class Building {
         this.appartments = appartments;
     }
 
+    public void showInfo(){
+        System.out.println("Dirección: " + address + " Municipio: " + city + "Nº de Apartamentos: ");
+        for (var appartment: appartments){
+            showInfo();
+        }
+    }
+
+    // Dado una planta y una puerta devuelve el apartamento de esa planta y puerta. Si no
+    // existe dicho apartamento devuvle null.
+
+    public Appartment findAppartment (int floor, String doorway){
+        for (var appartment : appartments){
+            if (appartment.getFloor() == (floor) && appartment.getDoorway().equals(doorway)) {
+                return appartment;
+            }
+        }
+        return null;
+    }
+
+    //showFloorApartments(int floor): Dado un número de planta, muestra los
+    //apartamentos de esa planta
+
+    public void showFloorAppartments(int floor){
+        for (var appartment : appartments){
+            if (appartment.getFloor() == floor){
+                appartment.showInfo();
+            }
+        }
+    }
+
+    //findOwners(int floor, String door): Dado una planta y una puerta, devuelve
+    //  los propietarios del apartamento de esa puerta y planta. Si no existe dicho
+    //  apartamento devuelve null.
+
+    public Owner[] findAppartmentOwners(int floor, String doorway){
+        var appartment = findAppartment(floor, doorway);
+        if(appartment == null){
+            return null;
+        }else {
+            return appartment.getOwners();
+        }
+    }
+
+
+
     public String getAddress() {
         return address;
     }

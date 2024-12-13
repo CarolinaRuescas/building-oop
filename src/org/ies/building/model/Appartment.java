@@ -14,6 +14,13 @@ public class Appartment {
         this.owners = owners;
     }
 
+    public void showInfo(){
+        System.out.println("Planta: " + floor + "Nº de puerta: " + doorway + "Información de los propietario: ");
+        for (var owner: owners){
+            owner.showInfo();
+        }
+    }
+
     public int getFloor() {
         return floor;
     }

@@ -13,6 +13,11 @@ public class Owner {
         this.surname = surname;
     }
 
+    public void showInfo(){
+        System.out.println("NIF: " + nif + "Nombre: " + name + "Apellido: " + surname);
+    }
+
+
     public String getNif() {
         return nif;
     }
