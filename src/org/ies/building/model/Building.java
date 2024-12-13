@@ -5,12 +5,12 @@ import java.util.Objects;
 
 public class Building {
     private String address;
-    private String town;
+    private String city;
     private Appartment[] appartments;
 
-    public Building(String address, String town, Appartment[] appartments) {
+    public Building(String address, String city, Appartment[] appartments) {
         this.address = address;
-        this.town = town;
+        this.city = city;
         this.appartments = appartments;
     }
 
@@ -22,12 +22,12 @@ public class Building {
         this.address = address;
     }
 
-    public String getTown() {
-        return town;
+    public String getCity() {
+        return city;
     }
 
-    public void setTown(String town) {
-        this.town = town;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public Appartment[] getAppartments() {
@@ -43,19 +43,19 @@ public class Building {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Building building = (Building) o;
-        return Objects.equals(address, building.address) && Objects.equals(town, building.town) && Objects.deepEquals(appartments, building.appartments);
+        return Objects.equals(address, building.address) && Objects.equals(city, building.city) && Objects.deepEquals(appartments, building.appartments);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(address, town, Arrays.hashCode(appartments));
+        return Objects.hash(address, city, Arrays.hashCode(appartments));
     }
 
     @Override
     public String toString() {
         return "Building{" +
                 "address='" + address + '\'' +
-                ", town='" + town + '\'' +
+                ", town='" + city + '\'' +
                 ", appartments=" + Arrays.toString(appartments) +
                 '}';
     }

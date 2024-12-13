@@ -4,22 +4,22 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Appartment {
-    private int tier;
+    private int floor;
     private String doorway;
     private Owner[] owners;
 
-    public Appartment(int tier, String doorway, Owner[] owners) {
-        this.tier = tier;
+    public Appartment(int floor, String doorway, Owner[] owners) {
+        this.floor = floor;
         this.doorway = doorway;
         this.owners = owners;
     }
 
-    public int getTier() {
-        return tier;
+    public int getFloor() {
+        return floor;
     }
 
-    public void setTier(int tier) {
-        this.tier = tier;
+    public void setFloor(int floor) {
+        this.floor = floor;
     }
 
     public String getDoorway() {
@@ -43,18 +43,18 @@ public class Appartment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Appartment that = (Appartment) o;
-        return tier == that.tier && Objects.equals(doorway, that.doorway) && Objects.deepEquals(owners, that.owners);
+        return floor == that.floor && Objects.equals(doorway, that.doorway) && Objects.deepEquals(owners, that.owners);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tier, doorway, Arrays.hashCode(owners));
+        return Objects.hash(floor, doorway, Arrays.hashCode(owners));
     }
 
     @Override
     public String toString() {
         return "Appartment{" +
-                "tier=" + tier +
+                "tier=" + floor +
                 ", doorway='" + doorway + '\'' +
                 ", owners=" + Arrays.toString(owners) +
                 '}';
