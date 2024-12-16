@@ -48,6 +48,15 @@ Métodos:
 
 Haz un reader por cada bean
 
+## BuikdingApp1
+Tendrá un método run() que realice lo siguiente:
+-Lee un edificio 
+- Pide al usuario un piso y una planta
+  - Busca el apartamento de en el piso y planta que ha pasado el usuario
+    Si existe, muestra su información
+    Si no existe muestra el mensaje "No se ha encontrado el apartamento"
+- Después, muestra la información de los apartamentos de la segunda planta
+
 ### BuildingApp
 
 Debe tener un método run() que haga:
